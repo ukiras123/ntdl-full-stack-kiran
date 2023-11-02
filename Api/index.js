@@ -1,5 +1,7 @@
 const express = require("express");
 const cors = require("cors");
+require("dotenv").config();
+const connectdb = require("./src/config/mongodb");
 
 const app = express();
 app.use(
@@ -13,11 +15,11 @@ app.use(
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   })
 );
-require("dotenv").config();
-const connectdb = require("./src/config/mongodb");
+app.use(express.static(__dirname + "/build"));
 
 //Routers
 const taskRouter = require("./src/router/taskrouter");
+const exp = require("constants");
 
 const PORT = process.env.PORT || 3000;
 
