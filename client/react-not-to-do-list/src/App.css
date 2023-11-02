@@ -1,0 +1,6 @@
+body{
+  background: linear-gradient(rgba(128, 0, 128, 0.701), pink);
+}
+.wrapper{
+  min-height: 100vh;
+}
