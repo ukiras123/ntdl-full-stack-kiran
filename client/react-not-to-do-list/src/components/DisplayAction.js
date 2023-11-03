@@ -1,8 +1,7 @@
 import axios from "axios";
 import { setTaskList } from "./DisplayTaskSlice";
 
-const API_PATH =
-  process.env.NODE_ENV !== "production" ? "http://localhost:3000/" : "/";
+const API_PATH = process.env.NODE_ENV !== "production" ? "/" : "/";
 
 export const getAllTasksAction = () => async (dispatch) => {
   try {
