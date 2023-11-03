@@ -4,17 +4,7 @@ require("dotenv").config();
 const connectdb = require("./src/config/mongodb");
 
 const app = express();
-app.use(
-  cors({
-    origin: [
-      "http://localhost:3000",
-      "http://localhost:3001",
-      "http://localhost:3002",
-    ],
-    headers: ["Content-Type", "Authorization"],
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-  })
-);
+app.use(cors()); //this will allow all ips
 app.use(express.static(__dirname + "/build"));
 
 //Routers
